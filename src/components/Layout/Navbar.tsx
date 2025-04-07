@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
@@ -41,7 +40,7 @@ const Navbar = () => {
     <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-white/70 backdrop-blur-md"}`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/chat" className="flex items-center cursor-pointer" title="Chat with Chat-Co">
             <img src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" alt="Chat-Co Logo" className="h-10 w-10" />
             <span className="ml-2 font-bold text-xl text-cyan-500">Chat-Co</span>
           </Link>
@@ -50,11 +49,6 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           {!isAuthenticated && (
             <>
-              <Link to="/chat">
-                <Button variant="ghost" className="items-center">
-                  <MessageSquareIcon className="h-4 w-4 mr-2" /> Chat
-                </Button>
-              </Link>
               <Link to="/admin-login">
                 <Button variant="outline" className="items-center">
                   <UserIcon className="h-4 w-4 mr-2" /> Admin

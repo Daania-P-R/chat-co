@@ -29,13 +29,6 @@ const Index = () => {
               Get instant answers to your questions about admissions, courses, campus life, and more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                className="bg-cyan-500 hover:bg-cyan-600 text-white py-6 px-8 text-lg"
-                onClick={() => navigate("/chat")}
-              >
-                <MessageSquareIcon className="mr-2 h-5 w-5" />
-                Start Chatting
-              </Button>
               <Link to="/admin-login">
                 <Button variant="outline" className="py-6 px-8 text-lg">
                   <UserIcon className="mr-2 h-5 w-5" />
@@ -45,11 +38,12 @@ const Index = () => {
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative">
+            <div className="relative cursor-pointer" onClick={() => navigate("/chat")}>
               <img 
                 src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" 
                 alt="Chat-Co Logo" 
-                className="w-64 h-64 mb-6" 
+                className="w-64 h-64 mb-6 hover:scale-105 transition-transform duration-300" 
+                title="Click to start chatting with Chat-Co"
               />
             </div>
           </div>
@@ -94,14 +88,16 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <div className="flex items-center">
-                <img 
-                  src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" 
-                  alt="Chat-Co Logo" 
-                  className="h-6 w-6" 
-                />
-                <span className="ml-2 text-lg font-bold">Chat-Co</span>
-              </div>
+              <Link to="/chat" className="hover:opacity-80 transition-opacity">
+                <div className="flex items-center">
+                  <img 
+                    src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" 
+                    alt="Chat-Co Logo" 
+                    className="h-6 w-6" 
+                  />
+                  <span className="ml-2 text-lg font-bold">Chat-Co</span>
+                </div>
+              </Link>
               <p className="text-sm text-gray-300 mt-1">© 2025 Chat-Co. All rights reserved.</p>
             </div>
             <div className="flex gap-6">
