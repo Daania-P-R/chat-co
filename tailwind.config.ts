@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				college: {
+					50: '#f0f6ff',
+					100: '#e0eeff',
+					200: '#c7deff',
+					300: '#a1c6ff',
+					400: '#74a4ff',
+					500: '#4175ff',
+					600: '#2952ff',
+					700: '#1E3A8A', // Primary college blue
+					800: '#172554',
+					900: '#121f44',
+					950: '#0b1229',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +98,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
+				'typing': {
+					'0%': { width: '0' },
+					'100%': { width: '100%' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-in-out',
+				'typing': 'typing 2s steps(40, end)'
 			}
 		}
 	},
