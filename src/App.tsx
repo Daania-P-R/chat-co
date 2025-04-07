@@ -10,6 +10,7 @@ import ChatPage from "./pages/ChatPage";
 import AdminPage from "./pages/AdminPage";
 import NotFound from "./pages/NotFound";
 
+// Create a new QueryClient
 const queryClient = new QueryClient();
 
 const App = () => (

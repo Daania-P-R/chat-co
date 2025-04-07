@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -23,7 +23,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 221 83% 53%;
+    --accent: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
 
     --radius: 0.5rem;
   }
@@ -46,7 +46,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -63,7 +63,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --ring: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
   }
 
   * {
@@ -86,15 +86,15 @@
 }
 
 .chat-bubble.user {
-  background-color: #e0eeff;
-  color: #172554;
+  background-color: #e0f7ff; /* Lighter cyan for user messages */
+  color: #0e7490;
   margin-left: auto;
   border-bottom-right-radius: 0.2rem;
 }
 
 .chat-bubble.bot {
   background-color: #f8fafc;
-  color: #172554;
+  color: #0e7490;
   margin-right: auto;
   border-bottom-left-radius: 0.2rem;
   border: 1px solid #e2e8f0;
@@ -103,7 +103,7 @@
 .typing-indicator span {
   width: 10px;
   height: 10px;
-  background-color: #4175ff;
+  background-color: #22d3ee; /* Cyan color for typing indicator */
   border-radius: 50%;
   display: inline-block;
   margin: 0 2px;

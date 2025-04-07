@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LogOutIcon, UserIcon, BookIcon, MessageSquareIcon, FileTextIcon } from "lucide-react";
+import { LogOutIcon, UserIcon, HeadphonesIcon, MessageSquareIcon, FileTextIcon } from "lucide-react";
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
@@ -42,8 +42,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <BookIcon className="h-6 w-6 text-college-700" />
-            <span className="ml-2 font-bold text-xl text-college-700">College Chatbot</span>
+            <img src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" alt="Chat-Co Logo" className="h-10 w-10" />
+            <span className="ml-2 font-bold text-xl text-cyan-500">Chat-Co</span>
           </Link>
         </div>
 

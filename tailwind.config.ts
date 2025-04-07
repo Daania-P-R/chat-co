@@ -53,18 +53,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				college: {
-					50: '#f0f6ff',
-					100: '#e0eeff',
-					200: '#c7deff',
-					300: '#a1c6ff',
-					400: '#74a4ff',
-					500: '#4175ff',
-					600: '#2952ff',
-					700: '#1E3A8A', // Primary college blue
-					800: '#172554',
-					900: '#121f44',
-					950: '#0b1229',
+				chatco: {
+					50: '#e0f7ff',
+					100: '#c0ecff',
+					200: '#a1e2ff',
+					300: '#79d4ff',
+					400: '#22d3ee',
+					500: '#06b6d4',
+					600: '#0891b2',
+					700: '#0e7490',
+					800: '#155e75',
+					900: '#164e63',
+					950: '#083344',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
