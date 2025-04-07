@@ -3,15 +3,16 @@ import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "@/components/Auth/LoginForm";
 import { Button } from "@/components/ui/button";
-import { MessageSquareIcon, HeadphonesIcon, BotIcon } from "lucide-react";
+import { MessageSquareIcon, HeadphonesIcon, BotIcon, UserIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
   
-  if (isAuthenticated) {
-    // Redirect authenticated users to the chat page
-    navigate("/chat");
+  // If user is authenticated and is admin, redirect to admin panel
+  if (isAuthenticated && user?.role === "admin") {
+    navigate("/admin");
     return null;
   }
   
@@ -30,11 +31,17 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-cyan-500 hover:bg-cyan-600 text-white py-6 px-8 text-lg"
-                onClick={() => document.getElementById("login-section")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => navigate("/chat")}
               >
                 <MessageSquareIcon className="mr-2 h-5 w-5" />
                 Start Chatting
               </Button>
+              <Link to="/admin-login">
+                <Button variant="outline" className="py-6 px-8 text-lg">
+                  <UserIcon className="mr-2 h-5 w-5" />
+                  Admin Login
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -78,16 +85,6 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-3">Available 24/7</h3>
               <p className="text-gray-600">Get help anytime, day or night, without waiting for office hours or email responses.</p>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Login Section */}
-      <section id="login-section" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Login to Get Started</h2>
-          <div className="max-w-md mx-auto">
-            <LoginForm />
           </div>
         </div>
       </section>
