@@ -7,7 +7,7 @@ import { ChatMessage } from "@/types";
 import { sendMessage } from "@/services/chatService";
 import { v4 as uuidv4 } from "uuid";
 import { useToast } from "@/components/ui/use-toast";
-import { SendIcon, RotateCw } from "lucide-react";
+import { SendIcon, RotateCw, Phone } from "lucide-react";
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -148,6 +148,10 @@ const ChatInterface = () => {
         </form>
         <div className="text-xs text-gray-500 mt-2">
           Try asking about college hours, registration, library, or financial aid.
+        </div>
+        <div className="flex items-center justify-center mt-3 text-sm text-cyan-700 border-t pt-2">
+          <Phone className="h-4 w-4 mr-2" />
+          <span>Contact: 7559999824</span>
         </div>
       </div>
     </div>
