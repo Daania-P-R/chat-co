@@ -86,7 +86,7 @@ const ChatInterface = () => {
   return (
     <div className="flex flex-col h-[calc(100vh-8rem)] bg-white rounded-lg shadow-sm border">
       <div className="p-4 border-b flex items-center justify-between bg-gray-50 rounded-t-lg">
-        <h2 className="text-lg font-semibold text-college-700">College Chatbot</h2>
+        <h2 className="text-lg font-semibold text-college-700">Chat-Co</h2>
         <Button variant="outline" size="sm" onClick={handleReset} className="flex items-center gap-2">
           <RotateCw className="h-4 w-4" />
           Reset Chat
@@ -102,7 +102,7 @@ const ChatInterface = () => {
             >
               <div className="flex justify-between items-start">
                 <span className="font-medium">
-                  {message.role === "user" ? "You" : "College Bot"}
+                  {message.role === "user" ? "You" : "Chat-Co"}
                 </span>
                 <span className="text-xs text-gray-500 ml-2">
                   {formatTime(message.timestamp)}
@@ -115,7 +115,7 @@ const ChatInterface = () => {
           {isTyping && (
             <div className="chat-bubble bot">
               <div className="flex items-center">
-                <span className="font-medium">College Bot</span>
+                <span className="font-medium">Chat-Co</span>
                 <div className="typing-indicator ml-3">
                   <span></span>
                   <span></span>
