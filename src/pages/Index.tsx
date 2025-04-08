@@ -3,7 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "@/components/Auth/LoginForm";
 import { Button } from "@/components/ui/button";
-import { MessageSquareIcon, HeadphonesIcon, BotIcon, UserIcon } from "lucide-react";
+import { MessageSquareIcon, HeadphonesIcon, BotIcon, UserIcon, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -104,8 +104,17 @@ const Index = () => {
               <a href="#" className="text-gray-300 hover:text-white">About</a>
               <a href="#" className="text-gray-300 hover:text-white">Privacy</a>
               <a href="#" className="text-gray-300 hover:text-white">Terms</a>
-              <a href="#" className="text-gray-300 hover:text-white">Contact</a>
+              <a href="tel:7559999824" className="text-gray-300 hover:text-white flex items-center">
+                <Phone className="h-4 w-4 mr-2" />
+                Contact
+              </a>
             </div>
+          </div>
+          <div className="mt-4 text-center md:text-right">
+            <a href="tel:7559999824" className="text-cyan-300 hover:text-white transition-colors inline-flex items-center">
+              <Phone className="h-4 w-4 mr-2" />
+              <span>7559999824</span>
+            </a>
           </div>
         </div>
       </footer>
