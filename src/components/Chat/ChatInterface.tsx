@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,8 +83,8 @@ const ChatInterface = () => {
   return (
     <div className="flex flex-col h-[calc(100vh-8rem)] bg-white rounded-lg shadow-sm border">
       <div className="p-4 border-b flex items-center justify-between bg-gray-50 rounded-t-lg">
-        <h2 className="text-lg font-semibold text-college-700">Chat-Co</h2>
-        <Button variant="outline" size="sm" onClick={handleReset} className="flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-black">Chat-Co</h2>
+        <Button variant="outline" size="sm" onClick={handleReset} className="flex items-center gap-2 text-black">
           <RotateCw className="h-4 w-4" />
           Reset Chat
         </Button>
@@ -136,7 +137,7 @@ const ChatInterface = () => {
           <Button 
             type="submit" 
             disabled={isTyping || !input.trim()} 
-            className="bg-college-700 hover:bg-college-800"
+            className="bg-black hover:bg-gray-800 text-white"
           >
             <SendIcon className="h-4 w-4" />
             <span className="sr-only">Send message</span>

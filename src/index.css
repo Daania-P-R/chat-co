@@ -5,65 +5,65 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 0%;  /* Black for primary */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 96%;  /* Light gray for accents */
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 0% 0%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 0%;  /* Black for rings/focus */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 100%;  /* White for primary in dark mode */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 0% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 183 100% 46.3%;  /* Bright cyan for Chat-Co branding */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;  /* White for rings/focus in dark mode */
   }
 
   * {
@@ -86,15 +86,15 @@
 }
 
 .chat-bubble.user {
-  background-color: #e0f7ff; /* Lighter cyan for user messages */
-  color: #0e7490;
+  background-color: #f0f0f0; /* Light gray for user messages */
+  color: #000000;
   margin-left: auto;
   border-bottom-right-radius: 0.2rem;
 }
 
 .chat-bubble.bot {
-  background-color: #f8fafc;
-  color: #0e7490;
+  background-color: #f8f8f8;
+  color: #000000;
   margin-right: auto;
   border-bottom-left-radius: 0.2rem;
   border: 1px solid #e2e8f0;
@@ -103,7 +103,7 @@
 .typing-indicator span {
   width: 10px;
   height: 10px;
-  background-color: #22d3ee; /* Cyan color for typing indicator */
+  background-color: #000000; /* Black color for typing indicator */
   border-radius: 50%;
   display: inline-block;
   margin: 0 2px;
@@ -138,7 +138,7 @@
 
 .chat-container {
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 #f8fafc;
+  scrollbar-color: #b4b4b4 #f8f8f8;
 }
 
 .chat-container::-webkit-scrollbar {
@@ -146,10 +146,10 @@
 }
 
 .chat-container::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f8f8f8;
 }
 
 .chat-container::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
+  background-color: #b4b4b4;
   border-radius: 6px;
 }
