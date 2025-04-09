@@ -64,13 +64,6 @@ const Index = () => {
                 <ShieldIcon className="mr-2 h-5 w-5" />
                 Admin Panel
               </Button>
-              <Button 
-                onClick={goToChat} 
-                className="py-6 px-8 text-lg bg-cyan-500 hover:bg-cyan-600 text-white"
-              >
-                <MessageSquareIcon className="mr-2 h-5 w-5" />
-                Chat Now
-              </Button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
