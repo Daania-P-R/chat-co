@@ -108,7 +108,7 @@ const Index = () => {
             </div>
             <div className="flex gap-6">
               <a href="#" className="text-gray-300 hover:text-white">About</a>
-              <a href="#" className="text-gray-300 hover:text-white">Privacy</a>
+              <Link to="/privacy" className="text-gray-300 hover:text-white">Privacy</Link>
               <a href="#" className="text-gray-300 hover:text-white">Terms</a>
               <button 
                 className="text-gray-300 hover:text-white flex items-center"
