@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ChatPage from "./pages/ChatPage";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
+import AdminPage from "./pages/AdminPage";
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

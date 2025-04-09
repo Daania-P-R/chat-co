@@ -1,16 +1,42 @@
 
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageSquareIcon, HeadphonesIcon, BotIcon, UserIcon, Phone } from "lucide-react";
+import { 
+  HeadphonesIcon, 
+  BotIcon, 
+  UserIcon, 
+  Phone, 
+  ShieldIcon 
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogDescription 
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const Index = () => {
   const navigate = useNavigate();
   const [showPhone, setShowPhone] = useState(false);
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   
   const togglePhoneNumber = () => {
     setShowPhone(!showPhone);
+  };
+  
+  const handleAdminLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // This is just a front-end implementation, no actual authentication
+    if (username && password) {
+      navigate("/admin");
+    }
   };
   
   return (
@@ -26,19 +52,22 @@ const Index = () => {
               Get instant answers to your questions about admissions, courses, campus life, and more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button onClick={() => navigate("/chat")} className="py-6 px-8 text-lg bg-black hover:bg-gray-800 text-white">
-                <MessageSquareIcon className="mr-2 h-5 w-5" />
-                Start Chatting
+              <Button 
+                onClick={() => setShowAdminLogin(true)} 
+                className="py-6 px-8 text-lg bg-black hover:bg-gray-800 text-white"
+              >
+                <ShieldIcon className="mr-2 h-5 w-5" />
+                Admin Panel
               </Button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative cursor-pointer" onClick={() => navigate("/chat")}>
+            <div className="relative cursor-pointer" onClick={() => setShowAdminLogin(true)}>
               <img 
                 src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" 
                 alt="Chat-Co Logo" 
                 className="w-64 h-64 mb-6 hover:scale-105 transition-transform duration-300" 
-                title="Click to start chatting with Chat-Co"
+                title="Click to access Admin Panel"
               />
             </div>
           </div>
@@ -69,7 +98,7 @@ const Index = () => {
             
             <div className="bg-gray-100 rounded-lg p-6 text-center">
               <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
-                <MessageSquareIcon className="h-8 w-8 text-black" />
+                <UserIcon className="h-8 w-8 text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Available 24/7</h3>
               <p className="text-gray-600">Get help anytime, day or night, without waiting for office hours or email responses.</p>
@@ -78,12 +107,61 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Admin Login Dialog */}
+      <Dialog open={showAdminLogin} onOpenChange={setShowAdminLogin}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">Admin Login</DialogTitle>
+            <DialogDescription>
+              Enter your credentials to access the admin panel.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleAdminLogin} className="space-y-4 pt-4">
+            <div className="space-y-2">
+              <Label htmlFor="username">Username</Label>
+              <Input
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <div className="flex justify-end pt-4">
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={() => setShowAdminLogin(false)}
+                className="mr-2"
+              >
+                Cancel
+              </Button>
+              <Button type="submit">Login</Button>
+            </div>
+            <p className="text-xs text-gray-500 text-center mt-2">
+              For demo purposes, enter any username and password
+            </p>
+          </form>
+        </DialogContent>
+      </Dialog>
+      
       {/* Footer */}
       <footer className="bg-black text-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <Link to="/chat" className="hover:opacity-80 transition-opacity">
+              <Link to="/" className="hover:opacity-80 transition-opacity">
                 <div className="flex items-center">
                   <img 
                     src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" 
