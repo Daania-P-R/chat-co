@@ -1,23 +1,14 @@
 
-import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import LoginForm from "@/components/Auth/LoginForm";
 import { Button } from "@/components/ui/button";
 import { MessageSquareIcon, HeadphonesIcon, BotIcon, UserIcon, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Index = () => {
-  const { isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
   const [showPhone, setShowPhone] = useState(false);
   
-  // If user is authenticated and is admin, redirect to admin panel
-  if (isAuthenticated && user?.role === "admin") {
-    navigate("/admin");
-    return null;
-  }
-
   const togglePhoneNumber = () => {
     setShowPhone(!showPhone);
   };
@@ -35,12 +26,10 @@ const Index = () => {
               Get instant answers to your questions about admissions, courses, campus life, and more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/admin-login">
-                <Button variant="outline" className="py-6 px-8 text-lg">
-                  <UserIcon className="mr-2 h-5 w-5" />
-                  Admin Login
-                </Button>
-              </Link>
+              <Button onClick={() => navigate("/chat")} className="py-6 px-8 text-lg bg-black hover:bg-gray-800 text-white">
+                <MessageSquareIcon className="mr-2 h-5 w-5" />
+                Start Chatting
+              </Button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -107,9 +96,8 @@ const Index = () => {
               <p className="text-sm text-gray-300 mt-1">© 2025 Chat-Co. All rights reserved.</p>
             </div>
             <div className="flex gap-6">
-              <a href="#" className="text-gray-300 hover:text-white">About</a>
+              <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
               <Link to="/privacy" className="text-gray-300 hover:text-white">Privacy</Link>
-              <a href="#" className="text-gray-300 hover:text-white">Terms</a>
               <button 
                 className="text-gray-300 hover:text-white flex items-center"
                 onClick={togglePhoneNumber}

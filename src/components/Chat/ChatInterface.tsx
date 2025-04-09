@@ -3,11 +3,16 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ChatMessage } from "@/types";
-import { sendMessage } from "@/services/chatService";
 import { v4 as uuidv4 } from "uuid";
 import { useToast } from "@/components/ui/use-toast";
 import { SendIcon, RotateCw } from "lucide-react";
+
+interface ChatMessage {
+  id: string;
+  content: string;
+  role: "user" | "assistant";
+  timestamp: Date;
+}
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -46,19 +51,28 @@ const ChatInterface = () => {
     setInput("");
     setIsTyping(true);
     
-    try {
-      const botResponse = await sendMessage(input);
+    // Simulate a response after a short delay (front-end only)
+    setTimeout(() => {
+      const botResponses = [
+        "I understand your question about college admissions. The next intake starts in September.",
+        "That's a great question! The library is open from 8am to 10pm on weekdays.",
+        "The financial aid office can be contacted at financial.aid@college.edu or by visiting room 230 in the admin building.",
+        "Our college offers over 50 undergraduate programs across 5 faculties.",
+        "The deadline for scholarship applications is March 15th each year."
+      ];
       
-      setMessages(prevMessages => [...prevMessages, botResponse]);
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to get a response. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
+      const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+      
+      const botMessage: ChatMessage = {
+        id: uuidv4(),
+        content: randomResponse,
+        role: "assistant",
+        timestamp: new Date()
+      };
+      
+      setMessages(prevMessages => [...prevMessages, botMessage]);
       setIsTyping(false);
-    }
+    }, 1500);
   };
 
   const handleReset = () => {
