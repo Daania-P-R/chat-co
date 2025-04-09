@@ -18,7 +18,7 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: "welcome",
-      content: "Hi there! I'm your college chatbot assistant. How can I help you today?",
+      content: "Hi there! I'm your Chat-Co assistant. How can I help you today?",
       role: "assistant",
       timestamp: new Date()
     }
@@ -79,7 +79,7 @@ const ChatInterface = () => {
     setMessages([
       {
         id: "welcome",
-        content: "Hi there! I'm your college chatbot assistant. How can I help you today?",
+        content: "Hi there! I'm your Chat-Co assistant. How can I help you today?",
         role: "assistant",
         timestamp: new Date()
       }

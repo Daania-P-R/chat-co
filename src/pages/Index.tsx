@@ -6,7 +6,8 @@ import {
   BotIcon, 
   UserIcon, 
   Phone, 
-  ShieldIcon 
+  ShieldIcon,
+  MessageSquareIcon
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -38,6 +39,10 @@ const Index = () => {
       navigate("/admin");
     }
   };
+
+  const goToChat = () => {
+    navigate("/chat");
+  };
   
   return (
     <div className="min-h-screen bg-white">
@@ -59,15 +64,22 @@ const Index = () => {
                 <ShieldIcon className="mr-2 h-5 w-5" />
                 Admin Panel
               </Button>
+              <Button 
+                onClick={goToChat} 
+                className="py-6 px-8 text-lg bg-cyan-500 hover:bg-cyan-600 text-white"
+              >
+                <MessageSquareIcon className="mr-2 h-5 w-5" />
+                Chat Now
+              </Button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative cursor-pointer" onClick={() => setShowAdminLogin(true)}>
+            <div className="relative cursor-pointer" onClick={goToChat}>
               <img 
                 src="/lovable-uploads/5fe04011-cca2-4dac-9956-f12fd85e2bd8.png" 
                 alt="Chat-Co Logo" 
                 className="w-64 h-64 mb-6 hover:scale-105 transition-transform duration-300" 
-                title="Click to access Admin Panel"
+                title="Click to start chatting"
               />
             </div>
           </div>
